@@ -14,7 +14,7 @@ export default function Page() {
   const [showDetails, setShowDetails] = useState(false);
   const [contractInfo, setContractInfo] = useState(null);
   const [contractAddress, setContractAddress] = useState("");
-  const [dexInfo, setDexInfo] = useState(null);
+  const [dexInfo, setDexInfo] = useState();
 
   const fetchContractInfo = async () => {
     try {
@@ -187,16 +187,14 @@ export default function Page() {
                   <p className="font-medium mb-3">Overview</p>
                   {dexInfo && (
                     <p className="text-gray-400">
-                      The address is a smart contract address on the{" "}
-                      {dexInfo.chainId} blockchain. It is owned by the project{" "}
-                      {dexInfo.baseToken.name}, which is a decentralized finance
-                      (DeFi) platform that allows users to borrow and lend
-                      assets. According to {dexInfo.dexId}, the Cai smart
-                      contract has a liquidity of {dexInfo.liquidity.quote} ETH,
-                      which is worth over ${dexInfo.liquidity.usd} as of
-                      2023-10-18. The contract has also processed over 10
-                      thousand transactions and has over 1,000 unique addresses
-                      interacting with it.
+                      The address is a smart contract address on the Ethereum
+                      blockchain. It is owned by the project Circe Ai, which is
+                      a decentralized finance (DeFi) platform that allows users
+                      to borrow and lend assets. According to Uniswap, the Cai
+                      smart contract has a liquidity of 3 ETH, which is worth
+                      over $9052.6 as of 2023-10-18. The contract has also
+                      processed over 10 thousand transactions and has over 1,000
+                      unique addresses interacting with it.
                     </p>
                   )}
                 </div>
@@ -211,23 +209,22 @@ export default function Page() {
                     <ul>
                       <li className="text-gray-400">
                         <span className="text-white">Token Name: </span>
-                        {dexInfo.baseToken.name} ({dexInfo.baseToken.symbol})
+                        Circe Ai (CIA)
                       </li>
                       <li className="text-gray-400">
                         <span className="text-white">Network: </span>
-                        {dexInfo.chainId}
+                        Ethereum
                       </li>
                       <li className="text-gray-400">
-                        <span className="text-white">Price: </span>$
-                        {dexInfo.priceUsd}
+                        <span className="text-white">Price: </span> $0.0002693
                       </li>
                       <li className="text-gray-400">
-                        <span className="text-white">Liquidity (USD): </span>$
-                        {dexInfo.liquidity.usd}
+                        <span className="text-white">Liquidity (USD): </span>
+                        $9052.6
                       </li>
                       <li className="text-gray-400">
-                        <span className="text-white">MarketCap (FDV): </span>$
-                        {dexInfo.fdv}
+                        <span className="text-white">MarketCap (FDV): </span>
+                        $26934
                       </li>
                     </ul>
                   )}
@@ -236,16 +233,13 @@ export default function Page() {
                   <p className="font-medium mb-3">MarketCap Prediction</p>
                   {dexInfo && (
                     <p className="text-gray-400">
-                      The market cap prediction for {dexInfo.baseToken.name} is
-                      mixed. Some analysts believe that the{" "}
-                      {dexInfo.baseToken.symbol} DeFi platform could gain
+                      The market cap prediction for Circe Ai is mixed. Some
+                      analysts believe that the CIA DeFi platform could gain
                       traction in the coming months and years, which could lead
-                      to increased demand for {dexInfo.baseToken.symbol} tokens
-                      and a higher market cap. Others believe that the
-                      cryptocurrency market as a whole is facing a number of
-                      challenges, which could dampen demand for{" "}
-                      {dexInfo.baseToken.symbol} tokens and lead to a lower
-                      market cap.
+                      to increased demand for CIA tokens and a higher market
+                      cap. Others believe that the cryptocurrency market as a
+                      whole is facing a number of challenges, which could dampen
+                      demand for CIA tokens and lead to a lower market cap.
                     </p>
                   )}
                 </div>
@@ -260,8 +254,8 @@ export default function Page() {
                   {dexInfo && (
                     <>
                       <p className="text-gray-400">
-                        The top 10 holders of {dexInfo.baseToken.name}{" "}
-                        collectively hold this percentage of the total supply.
+                        The top 10 holders of Circe Ai collectively hold this
+                        percentage of the total supply.
                       </p>
                       <ul className="mt-5">
                         <li className="text-sm inline-flex">
@@ -269,72 +263,56 @@ export default function Page() {
                           {truncateWalletAddress(
                             "0xdCBc463C738177DDf5A89D438321BEb6CB957ddc"
                           )}
-                          <span className="ml-5">
-                            10000 {dexInfo.baseToken.symbol}
-                          </span>
+                          <span className="ml-5">10000 CIA</span>
                         </li>
                         <li className="text-sm inline-flex">
                           <LinkIcon className="w-5 mr-1" />{" "}
                           {truncateWalletAddress(
                             "0xdCBc463C738177DDf5A89D438321BEb6CB957ddc"
                           )}
-                          <span className="ml-5">
-                            10000 {dexInfo.baseToken.symbol}
-                          </span>
+                          <span className="ml-5">10000 CIA</span>
                         </li>
                         <li className="text-sm inline-flex">
                           <LinkIcon className="w-5 mr-1" />{" "}
                           {truncateWalletAddress(
                             "0xdCBc463C738177DDf5A89D438321BEb6CB957ddc"
                           )}
-                          <span className="ml-5">
-                            10000 {dexInfo.baseToken.symbol}
-                          </span>
+                          <span className="ml-5">10000 CIA</span>
                         </li>
                         <li className="text-sm inline-flex">
                           <LinkIcon className="w-5 mr-1" />{" "}
                           {truncateWalletAddress(
                             "0xdCBc463C738177DDf5A89D438321BEb6CB957ddc"
                           )}
-                          <span className="ml-5">
-                            10000 {dexInfo.baseToken.symbol}
-                          </span>
+                          <span className="ml-5">10000 CIA</span>
                         </li>
                         <li className="text-sm inline-flex">
                           <LinkIcon className="w-5 mr-1" />{" "}
                           {truncateWalletAddress(
                             "0xdCBc463C738177DDf5A89D438321BEb6CB957ddc"
                           )}
-                          <span className="ml-5">
-                            10000 {dexInfo.baseToken.symbol}
-                          </span>
+                          <span className="ml-5">10000 CIA</span>
                         </li>
                         <li className="text-sm inline-flex">
                           <LinkIcon className="w-5 mr-1" />{" "}
                           {truncateWalletAddress(
                             "0xdCBc463C738177DDf5A89D438321BEb6CB957ddc"
                           )}
-                          <span className="ml-5">
-                            10000 {dexInfo.baseToken.symbol}
-                          </span>
+                          <span className="ml-5">10000 CIA</span>
                         </li>
                         <li className="text-sm inline-flex">
                           <LinkIcon className="w-5 mr-1" />{" "}
                           {truncateWalletAddress(
                             "0xdCBc463C738177DDf5A89D438321BEb6CB957ddc"
                           )}
-                          <span className="ml-5">
-                            10000 {dexInfo.baseToken.symbol}
-                          </span>
+                          <span className="ml-5">10000 CIA</span>
                         </li>
                         <li className="text-sm inline-flex">
                           <LinkIcon className="w-5 mr-1" />{" "}
                           {truncateWalletAddress(
                             "0xdCBc463C738177DDf5A89D438321BEb6CB957ddc"
                           )}
-                          <span className="ml-5">
-                            10000 {dexInfo.baseToken.symbol}
-                          </span>
+                          <span className="ml-5">10000 CIA</span>
                         </li>
                       </ul>
                     </>
@@ -346,7 +324,7 @@ export default function Page() {
                     <>
                       <p className="text-gray-400">
                         Checking top 10 holders & their last interaction with
-                        the {dexInfo.baseToken.name} smart contract address.
+                        the Circe Ai smart contract address.
                       </p>
                       <ul className="mt-5">
                         <li className="text-sm inline-flex">
